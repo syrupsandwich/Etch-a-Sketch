@@ -18,13 +18,20 @@ body {
 .app {
 height: 370px;
 border: 1px dashed black;
-width: 400px
-
+width: 400px;
+padding: 8px;
 }
 
-footer {
-  justify-content: end;
-}
 .tools {
-justify-content: space-between;
+  border-bottom: 3px solid white;
+  display: flex;
+  height: 60px;
+  gap: 1px;
+  background-color: gray;
+}
+
+.btn {
+  flex: 1;
+  background: white;
+  border: none;
 }
