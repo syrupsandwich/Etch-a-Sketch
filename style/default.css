@@ -20,6 +20,8 @@ height: 370px;
 border: 1px dashed black;
 width: 400px;
 padding: 8px;
+display: flex;
+flex-direction: column;
 }
 
 .tools {
@@ -34,4 +36,9 @@ padding: 8px;
   flex: 1;
   background: white;
   border: none;
+}
+
+.canvas {
+  border: 1px dashed black;
+  flex: 1;
 }
