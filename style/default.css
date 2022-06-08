@@ -25,7 +25,7 @@ body {
 }
 
 .tools {
-  border-bottom: 3px solid white;
+  border-bottom: 6px solid white;
   display: flex;
   height: 60px;
   gap: 1px;
