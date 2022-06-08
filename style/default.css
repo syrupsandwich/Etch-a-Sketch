@@ -16,12 +16,12 @@ body {
 }
 
 .app {
-min-height: 370px;
-border: 1px dashed black;
-min-width: 400px;
-padding: 8px;
-display: flex;
-flex-direction: column;
+  min-height: 370px;
+  border: 1px dashed black;
+  min-width: 400px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .tools {
@@ -30,6 +30,11 @@ flex-direction: column;
   height: 60px;
   gap: 1px;
   background-color: gray;
+}
+
+.symbol {
+  display: inline-block;
+  transform: scale(1.8, 1.8);
 }
 
 .btn {
