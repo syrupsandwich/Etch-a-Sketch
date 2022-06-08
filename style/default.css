@@ -16,9 +16,9 @@ body {
 }
 
 .app {
-height: 370px;
+min-height: 370px;
 border: 1px dashed black;
-width: 400px;
+min-width: 400px;
 padding: 8px;
 display: flex;
 flex-direction: column;
