@@ -16,9 +16,7 @@ body {
 }
 
 .app {
-  min-height: 370px;
   border: 1px dashed black;
-  min-width: 400px;
   padding: 8px;
   display: flex;
 }
@@ -30,6 +28,7 @@ body {
   width: 60px;
   gap: 1px;
   background-color: gray;
+  align-self: flex-start;
 }
 
 .symbol {
@@ -38,9 +37,9 @@ body {
 }
 
 .btn {
-  flex: 1;
   background: white;
   border: none;
+  height: 60px;
 }
 
 .canvas {
@@ -50,4 +49,6 @@ body {
   flex-direction: column;
   background-color: rgb(224, 224, 224);
   gap: 1px;
+  height: 500px;
+  width: 500px;
 }

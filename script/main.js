@@ -2,7 +2,6 @@ let canvas = document.querySelector('.canvas');
 let rowsInCanvas = 16;
 let columnsInCanvas = 16;
 
-
 for(let i = 0 ; i <= rowsInCanvas ; i++) {
   let row = document.createElement('div')
   row.style.display = 'flex';
