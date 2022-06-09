@@ -16,9 +16,10 @@ body {
 }
 
 .app {
-  border: 1px dashed black;
+  border: 1px solid black;
   padding: 8px;
   display: flex;
+  border-radius: 3px;
 }
 
 .tools {
@@ -43,7 +44,7 @@ body {
 }
 
 .canvas {
-  border: 1px dashed black;
+  border: 1px solid black;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -51,4 +52,5 @@ body {
   gap: 1px;
   height: 500px;
   width: 500px;
+  padding: 1px;
 }
