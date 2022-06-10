@@ -4,6 +4,7 @@ let columnsInCanvas = 16;
 
 for(let i = 0 ; i <= rowsInCanvas ; i++) {
   let row = document.createElement('div')
+  row.className = 'row';
   row.style.display = 'flex';
   row.style.backgroundColor = 'rgb(224, 224, 224)';
   row.style.flex = '1';
@@ -17,3 +18,9 @@ for(let i = 0 ; i <= rowsInCanvas ; i++) {
   }
   canvas.appendChild(row);
 }
+
+canvas.addEventListener('mouseover', function (e){
+  if (e.target.parentNode.className == 'row'){
+  e.target.style.backgroundColor = 'silver';
+  }
+});
