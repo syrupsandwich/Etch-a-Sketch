@@ -19,8 +19,18 @@ for(let i = 0 ; i <= rowsInCanvas ; i++) {
   canvas.appendChild(row);
 }
 
-canvas.addEventListener('mouseover', function (e){
-  if (e.target.parentNode.className == 'row'){
+let mouseDown = 0;
+
+canvas.addEventListener('mousemove', function (e){
+  if (e.target.parentNode.className == 'row' && mouseDown){
   e.target.style.backgroundColor = 'silver';
   }
+});
+
+document.addEventListener('mousedown', (e)=>{
+  ++mouseDown;
+});
+
+document.addEventListener('mouseup', (e)=>{
+  --mouseDown;
 });
