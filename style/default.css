@@ -23,7 +23,6 @@ body {
 }
 
 .tools {
-  border-right: 6px solid white;
   display: flex;
   flex-direction: column;
   width: 60px;
@@ -32,15 +31,12 @@ body {
   align-self: flex-start;
 }
 
-.symbol {
-  display: inline-block;
-  transform: scale(1.8, 1.8);
-}
-
 .btn {
   background: white;
   border: none;
   height: 60px;
+  padding: 0;
+  font-size: x-large;
 }
 
 .canvas {
@@ -53,4 +49,5 @@ body {
   height: 500px;
   width: 500px;
   padding: 1px;
+  margin-left: 6px;
 }

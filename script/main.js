@@ -22,7 +22,7 @@ for(let i = 0 ; i <= rowsInCanvas ; i++) {
 let mouseDown = 0;
 
 canvas.addEventListener('mousemove', function (e){
-  if (e.target.parentNode.className == 'row' && mouseDown){
+  if (currentTool == 'pencil' && e.target.parentNode.className == 'row' && mouseDown){
   e.target.style.backgroundColor = 'silver';
   }
 });
@@ -34,3 +34,10 @@ document.addEventListener('mousedown', (e)=>{
 document.addEventListener('mouseup', (e)=>{
   --mouseDown;
 });
+
+let pencil = document.querySelector('.pencil');
+let currentTool;
+let toolBox = document.querySelector('.tools')
+toolBox.addEventListener('click', (e) =>{
+  currentTool = e.target.classList[1];
+})
