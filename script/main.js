@@ -24,7 +24,9 @@ let mouseDown = 0;
 canvas.addEventListener('mousemove', function (e){
   if (currentTool == 'pencil' && e.target.parentNode.className == 'row' && mouseDown){
   e.target.style.backgroundColor = 'silver';
-  }
+  } else if (currentTool == 'eraser' && e.target.parentNode.className == 'row' && mouseDown){
+    e.target.style.backgroundColor = 'white';
+    }
 });
 
 document.addEventListener('mousedown', (e)=>{
@@ -36,8 +38,10 @@ document.addEventListener('mouseup', (e)=>{
 });
 
 let pencil = document.querySelector('.pencil');
+let eraser = document.querySelector('eraser');
 let currentTool;
 let toolBox = document.querySelector('.tools')
+
 toolBox.addEventListener('click', (e) =>{
   currentTool = e.target.classList[1];
 })
