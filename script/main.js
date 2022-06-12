@@ -38,16 +38,24 @@ document.addEventListener('mouseup', (e)=>{
 });
 
 let pencil = document.querySelector('.pencil');
-let eraser = document.querySelector('eraser');
+let eraser = document.querySelector('.eraser');
 let currentTool;
 let toolBox = document.querySelector('.tools')
+let allBtns = document.querySelectorAll('.btn')
 
 toolBox.addEventListener('click', (e) =>{
+  allBtns.forEach(element => {
+    element.style.backgroundColor = 'white';
+    element.style.boxShadow = 'none';
+    element.style.border = 'none'
+  });
   currentTool = e.target.classList[1];
+  e.target.style.backgroundColor = 'rgb(255, 185, 176)';
+  e.target.style.boxShadow = 'inset 0px 0px 30px 10px white';
+  e.target.style.border = '2px dotted silver';
 })
 
-canvas.addEventListener('dragstart', (e)=>{
+window.addEventListener('dragstart', (e)=>{
   e.preventDefault();
-  e.target.preventDefault();
   return false;
 })
