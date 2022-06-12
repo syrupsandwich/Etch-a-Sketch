@@ -2,7 +2,7 @@ let canvas = document.querySelector('.canvas');
 let rowsInCanvas = 16;
 let columnsInCanvas = 16;
 
-for(let i = 0 ; i <= rowsInCanvas ; i++) {
+for(let i = 0 ; i <= rowsInCanvas ; i++){
   let row = document.createElement('div')
   row.className = 'row';
   row.style.display = 'flex';
@@ -10,7 +10,7 @@ for(let i = 0 ; i <= rowsInCanvas ; i++) {
   row.style.flex = '1';
   row.style.gap = '1px'
   
-  for(let i = 0 ; i <= columnsInCanvas ; i++) {
+  for(let i = 0 ; i <= columnsInCanvas ; i++){
     let cell = document.createElement('div');
     cell.style.flex = '1';
     cell.style.backgroundColor = 'white';
@@ -21,7 +21,7 @@ for(let i = 0 ; i <= rowsInCanvas ; i++) {
 
 let mouseDown = 0;
 
-canvas.addEventListener('mousemove', function (e){
+canvas.addEventListener('mousemove', (e)=>{
   if (currentTool == 'pencil' && e.target.parentNode.className == 'row' && mouseDown){
   e.target.style.backgroundColor = 'silver';
   } else if (currentTool == 'eraser' && e.target.parentNode.className == 'row' && mouseDown){
@@ -44,4 +44,10 @@ let toolBox = document.querySelector('.tools')
 
 toolBox.addEventListener('click', (e) =>{
   currentTool = e.target.classList[1];
+})
+
+canvas.addEventListener('dragstart', (e)=>{
+  e.preventDefault();
+  e.target.preventDefault();
+  return false;
 })
