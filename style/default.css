@@ -19,7 +19,18 @@ body {
   border: 1px solid black;
   padding: 8px;
   display: flex;
+  flex-direction: column;
   border-radius: 3px;
+}
+
+.sect-1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.sect-2 {
+  display: flex;
+  flex-direction: row;
 }
 
 .tools {
@@ -50,4 +61,10 @@ body {
   width: 500px;
   padding: 1px;
   margin-left: 6px;
+}
+
+.resolution {
+  max-width: 504px;
+  flex: 1;
+  align-self: left;
 }

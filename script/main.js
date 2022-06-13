@@ -2,21 +2,25 @@ let canvas = document.querySelector('.canvas');
 let rowsInCanvas = 16;
 let columnsInCanvas = 16;
 
-for(let i = 0 ; i <= rowsInCanvas ; i++){
-  let row = document.createElement('div')
-  row.className = 'row';
-  row.style.display = 'flex';
-  row.style.backgroundColor = 'rgb(224, 224, 224)';
-  row.style.flex = '1';
-  row.style.gap = '1px'
-  
-  for(let i = 0 ; i <= columnsInCanvas ; i++){
-    let cell = document.createElement('div');
-    cell.style.flex = '1';
-    cell.style.backgroundColor = 'white';
-    row.appendChild(cell);
+setCanvas();
+
+function setCanvas(){
+  for(let i = 0 ; i < rowsInCanvas ; i++){
+    let row = document.createElement('div')
+    row.className = 'row';
+    row.style.display = 'flex';
+    row.style.backgroundColor = 'rgb(224, 224, 224)';
+    row.style.flex = '1';
+    row.style.gap = '1px'
+    
+    for(let i = 0 ; i < columnsInCanvas ; i++){
+      let cell = document.createElement('div');
+      cell.style.flex = '1';
+      cell.style.backgroundColor = 'white';
+      row.appendChild(cell);
+    }
+    canvas.appendChild(row);
   }
-  canvas.appendChild(row);
 }
 
 let mouseDown = 0;
@@ -59,3 +63,27 @@ window.addEventListener('dragstart', (e)=>{
   e.preventDefault();
   return false;
 })
+
+resolutionBtn = document.querySelector('.resolution');
+function setResolution(){
+  let dimention = prompt('how many cells per dimention? (16-100)');
+  if (dimention < 16 || dimention > 100){
+    alert('minimum:16, maximum:100');
+    return;
+  } else {
+    rowsInCanvas = dimention;
+    columnsInCanvas = rowsInCanvas;
+  }
+}
+
+resolutionBtn.addEventListener('click', ()=>{
+  clearCanvas();
+  setResolution();
+  setCanvas();
+})
+
+function clearCanvas(){
+  for(let i = 0 ; i < rowsInCanvas ; i++){
+    canvas.firstChild.remove();
+  }
+}
