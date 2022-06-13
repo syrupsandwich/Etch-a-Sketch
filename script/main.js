@@ -25,9 +25,11 @@ function setCanvas(){
 
 let mouseDown = 0;
 
+let currentColor = 'silver'
+
 canvas.addEventListener('mousemove', (e)=>{
   if (currentTool == 'pencil' && e.target.parentNode.className == 'row' && mouseDown){
-  e.target.style.backgroundColor = 'silver';
+  e.target.style.backgroundColor = currentColor;
   } else if (currentTool == 'eraser' && e.target.parentNode.className == 'row' && mouseDown){
     e.target.style.backgroundColor = 'white';
     }
@@ -59,7 +61,7 @@ toolBox.addEventListener('click', (e) =>{
   e.target.style.border = '2px dotted silver';
 })
 
-window.addEventListener('dragstart', (e)=>{
+canvas.addEventListener('dragstart', (e)=>{
   e.preventDefault();
   return false;
 })
@@ -87,3 +89,9 @@ function clearCanvas(){
     canvas.firstChild.remove();
   }
 }
+
+canvas.addEventListener('mousedown', (e)=>{
+  if (currentTool == 'pencil' && e.target.parentNode.className == 'row'){
+  e.target.style.backgroundColor = currentColor;
+  }
+});
