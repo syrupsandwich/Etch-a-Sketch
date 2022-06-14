@@ -57,7 +57,7 @@ toolBox.addEventListener('click', (e) =>{
   });
   currentTool = e.target.classList[1];
   e.target.style.backgroundColor = 'rgb(255, 185, 176)';
-  e.target.style.boxShadow = 'inset 0px 0px 30px 10px white';
+  e.target.style.boxShadow = 'inset 0px 0px 34px 10px white';
   e.target.style.border = '2px dotted silver';
 })
 
@@ -93,5 +93,11 @@ function clearCanvas(){
 canvas.addEventListener('mousedown', (e)=>{
   if (currentTool == 'pencil' && e.target.parentNode.className == 'row'){
   e.target.style.backgroundColor = currentColor;
+  }
+});
+
+canvas.addEventListener('mousedown', (e)=>{
+  if (currentTool == 'eraser' && e.target.parentNode.className == 'row'){
+  e.target.style.backgroundColor = 'white';
   }
 });
