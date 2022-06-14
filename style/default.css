@@ -24,8 +24,7 @@ body {
 }
 
 .sect-1{
-  display: flex;
-  justify-content: space-between;
+height: 32px;
 }
 
 .sect-2 {
@@ -60,11 +59,34 @@ body {
   height: 500px;
   width: 500px;
   padding: 1px;
+  position: relative;
+  z-index: 10;
+}
+
+.deep-sect {
   margin-left: 6px;
 }
 
-.resolution {
+div.resolution {
   max-width: 504px;
-  flex: 1;
-  align-self: left;
+  position: absolute;
+  z-index: 0;
+  margin-top: -18px;
+  height: 30px;
+  width: 502px;
+  border: 1px solid silver;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
 }
+
+.resolution>button {
+  background-color: white;
+  margin-top: -14px;
+  padding: 2px 8px;
+  border: none;
+  height: fit-content;
+  font-size: medium;
+  color: gray;
+}
+
