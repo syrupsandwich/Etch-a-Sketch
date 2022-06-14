@@ -2,7 +2,10 @@ let canvas = document.querySelector('.canvas');
 let rowsInCanvas = 16;
 let columnsInCanvas = 16;
 
+//stop the page from adding anything to canvas if there is something on the canvas
+if (canvas.childNodes.length == 0){
 setCanvas();
+}
 
 function setCanvas(){
   for(let i = 0 ; i < rowsInCanvas ; i++){
