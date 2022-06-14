@@ -61,19 +61,19 @@ toolBox.addEventListener('click', (e) =>{
   e.target.style.border = '2px dotted silver';
 })
 
-canvas.addEventListener('dragstart', (e)=>{
+window.addEventListener('dragstart', (e)=>{
   e.preventDefault();
   return false;
 })
 
 resolutionBtn = document.querySelector('.resolution');
 function setResolution(){
-  let dimention = prompt('how many cells per dimention? (16-100)');
-  if (dimention < 16 || dimention > 100){
+  let dimension = prompt('how many blocks? (16-100)');
+  if (dimension < 16 || dimension > 100){
     alert('minimum:16, maximum:100');
     return;
   } else {
-    rowsInCanvas = dimention;
+    rowsInCanvas = dimension;
     columnsInCanvas = rowsInCanvas;
   }
 }
