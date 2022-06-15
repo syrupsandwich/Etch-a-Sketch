@@ -20,7 +20,7 @@ body {
   padding: 8px;
   display: flex;
   flex-direction: column;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .sect-1{
@@ -58,22 +58,20 @@ height: 32px;
   gap: 1px;
   height: 500px;
   width: 500px;
-  padding: 1px;
+  padding: 8px;
   position: relative;
   z-index: 10;
 }
 
 .deep-sect {
-  margin-left: 6px;
+  margin: 0 6px;
 }
 
 div.resolution {
-  max-width: 504px;
-  position: absolute;
   z-index: 0;
-  margin-top: -18px;
+  margin: -18px 0 -14px;
   height: 30px;
-  width: 502px;
+  width: inherit;
   border: 1px solid silver;
   border-radius: 12px;
   display: flex;
@@ -88,5 +86,9 @@ div.resolution {
   height: fit-content;
   font-size: medium;
   color: gray;
+}
+
+.palette {
+  width: 68px;
 }
 
