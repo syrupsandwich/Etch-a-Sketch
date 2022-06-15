@@ -71,7 +71,7 @@ window.addEventListener('dragstart', (e)=>{
 
 resolutionBtn = document.querySelector('.resolution');
 function setResolution(){
-  let dimension = prompt('how many blocks? (16-100)');
+  let dimension = prompt('please enter a number between 16 and 100.');
   if (dimension < 16 || dimension > 100){
     alert('minimum:16, maximum:100');
     return;
