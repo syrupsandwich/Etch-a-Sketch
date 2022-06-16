@@ -104,3 +104,27 @@ canvas.addEventListener('mousedown', (e)=>{
   e.target.style.backgroundColor = 'white';
   }
 });
+
+colorPalette = document.querySelector('.palette');
+
+for (let i = 0; i < 12; i++){
+  let paletteCell = document.createElement('div');
+  colorPalette.appendChild(paletteCell);
+}
+
+const paletteABSXII = ['#1c0903', '#433655', '#7e2738', '#495989', '#a23d2a', '#5f6468', '#4b6b68', '#7a5e6e', '#9e5738', '#d2935b', '#a1a6a6', '#d7c9c1'];
+const currentPalette = paletteABSXII;
+
+for (let i = 0; i < 12; i++){
+  colorPalette.childNodes[i].style.backgroundColor = currentPalette[i];
+}
+
+let lastCell = colorPalette.firstChild;
+colorPalette.addEventListener('click', (e)=>{
+  lastCell.style.boxShadow = 'none';
+  lastCell = e.target;
+  if (e.target.className != 'palette'){
+  currentColor = e.target.style.backgroundColor;
+  e.target.style.boxShadow = 'inset 0 0 3px 3px beige';
+  }
+});

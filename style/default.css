@@ -90,5 +90,12 @@ div.resolution {
 
 .palette {
   width: 68px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
+.palette>div {
+  flex: 1;
+  border: 1px solid silver;
+}
