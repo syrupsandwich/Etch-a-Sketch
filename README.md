@@ -1,7 +1,9 @@
 # Etch-a-Sketch
-a simple sketching app.
+A simple sketching app.
 
-features:
+I want this app to look like an etch-a-sketch.
+
+Features:
   - marker
   - eraser
   - resolution adjuster
