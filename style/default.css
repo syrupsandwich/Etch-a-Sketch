@@ -99,3 +99,16 @@ div.resolution {
   flex: 1;
   border: 1px solid silver;
 }
+
+.sect-3 {
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sect-3>p {
+  margin: 6px 2px 0 ;
+  font-weight: bold;
+  color: silver;
+}
