@@ -5,5 +5,5 @@ features:
   - marker
   - eraser
   - resolution adjuster
-
+  - colors
 
