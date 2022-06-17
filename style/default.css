@@ -89,10 +89,14 @@ div.resolution {
 }
 
 .palette {
-  width: 68px;
   display: flex;
-  flex-direction: column;
   gap: 2px;
+  height: 30px;
+  margin-top: 6px;
+}
+
+.empty-palette {
+  width: 68px;
 }
 
 .palette>div {
