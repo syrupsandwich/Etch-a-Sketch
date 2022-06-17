@@ -8,4 +8,4 @@ Features:
   - eraser
   - resolution adjuster
   - colors
-  <!-- - blending https://stackoverflow.com/a/6615053  https://www.codeproject.com/Articles/1202772/Color-Topics-for-Programmers#Alpha_Blending -->
+  - blending <!-- https://stackoverflow.com/a/6615053  https://www.codeproject.com/Articles/1202772/Color-Topics-for-Programmers#Alpha_Blending -->
