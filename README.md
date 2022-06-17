@@ -8,4 +8,4 @@ Features:
   - eraser
   - resolution adjuster
   - colors
-
+  - gridlines

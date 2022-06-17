@@ -14,7 +14,6 @@ function setCanvas(){
     row.style.display = 'flex';
     row.style.backgroundColor = 'rgb(224, 224, 224)';
     row.style.flex = '1';
-    row.style.gap = '1px'
     
     for(let i = 0 ; i < columnsInCanvas ; i++){
       let cell = document.createElement('div');
@@ -138,5 +137,27 @@ colorPalette.addEventListener('click', (e)=>{
   if (e.target.className != 'palette'){
   currentColor = e.target.style.backgroundColor;
   e.target.style.boxShadow = 'inset 0 0 3px 3px beige';
+  }
+});
+
+let gridStatus = 0;
+canvas.style.gap = '0';
+
+let grid = document.querySelector('#grid');
+
+grid.addEventListener('click', (e)=>{
+  let allRowsInCanvas = canvas.querySelectorAll('.row');
+  if(gridStatus){
+    canvas.style.gap = '0'
+    allRowsInCanvas.forEach(element => {
+      element.style.gap = '0';
+      gridStatus = 0;
+    });
+  }else {
+    canvas.style.gap = '1px'
+    allRowsInCanvas.forEach(element => {
+      element.style.gap = '1px';
+      gridStatus = 1;
+    });
   }
 });
