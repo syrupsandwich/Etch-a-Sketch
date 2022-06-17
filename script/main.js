@@ -112,7 +112,20 @@ for (let i = 0; i < 12; i++){
   colorPalette.appendChild(paletteCell);
 }
 
-const paletteRYB = ['#FEFE33', '#FCCC1A', '#FB9902', '#FC600A', '#FE2712', '#C21460', '#66B032', '#347C98', '#0247FE', '#4424D6', '#8601AF', '#C21460'];
+const paletteRYB = [
+  '#FEFE33',
+  '#FCCC1A',
+  '#FB9902',
+  '#FC600A',
+  '#FE2712',
+  '#C21460',
+  '#8601AF',
+  '#4424D6',
+  '#0247FE',
+  '#347C98',
+  '#66B032',
+  '#B2D732'
+];
 
 for (let i = 0; i < 12; i++){
   colorPalette.childNodes[i].style.backgroundColor = paletteRYB[i];
