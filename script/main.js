@@ -52,16 +52,24 @@ let toolBox = document.querySelector('.tools')
 let allBtns = document.querySelectorAll('.btn')
 
 toolBox.addEventListener('click', (e) =>{
+  clearToolBox();
+  if (currentTool == e.target.classList[1]){
+    currentTool = '';
+  } else {
   highlightTool(e.target);
   currentTool = e.target.classList[1];
+  }
 });
 
-function highlightTool(tool){
+function clearToolBox(){
   allBtns.forEach(element => {
     element.style.backgroundColor = 'white';
     element.style.boxShadow = 'none';
     element.style.border = 'none'
   });
+}
+
+function highlightTool(tool){
   tool.style.backgroundColor = 'rgb(255, 185, 176)';
   tool.style.boxShadow = 'inset 0px 0px 34px 10px white';
   tool.style.border = '2px dotted silver';
@@ -140,6 +148,7 @@ for (let i = 0; i < 12; i++){
 let allPaletteColors = document.querySelectorAll('.palette-color');
 
 colorPalette.addEventListener('click', (e)=>{
+  clearToolBox();
   highlightTool(pencil);
   currentTool = 'pencil';
   allPaletteColors.forEach(element => {
