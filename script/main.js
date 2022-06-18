@@ -150,6 +150,10 @@ let allPaletteColors = document.querySelectorAll('.palette-color');
 colorPalette.addEventListener('click', (e)=>{
   clearToolBox();
   highlightTool(pencil);
+  if (currentTool != 'pencil' && currentColor == e.target.style.backgroundColor){
+    currentTool = 'pencil';
+    return;
+  }
   currentTool = 'pencil';
   allPaletteColors.forEach(element => {
     element.style.boxShadow = 'none';
