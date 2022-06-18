@@ -27,7 +27,7 @@ function setCanvas(){
 
 let mouseDown = 0;
 
-let currentColor = 'silver'
+let currentColor = 'rgb(102,102,102)'
 
 canvas.addEventListener('mousemove', (e)=>{
   if (currentTool == 'pencil' && e.target.parentNode.className == 'row' && mouseDown){
@@ -52,16 +52,20 @@ let toolBox = document.querySelector('.tools')
 let allBtns = document.querySelectorAll('.btn')
 
 toolBox.addEventListener('click', (e) =>{
+  highlightTool(e.target);
+  currentTool = e.target.classList[1];
+});
+
+function highlightTool(tool){
   allBtns.forEach(element => {
     element.style.backgroundColor = 'white';
     element.style.boxShadow = 'none';
     element.style.border = 'none'
   });
-  currentTool = e.target.classList[1];
-  e.target.style.backgroundColor = 'rgb(255, 185, 176)';
-  e.target.style.boxShadow = 'inset 0px 0px 34px 10px white';
-  e.target.style.border = '2px dotted silver';
-})
+  tool.style.backgroundColor = 'rgb(255, 185, 176)';
+  tool.style.boxShadow = 'inset 0px 0px 34px 10px white';
+  tool.style.border = '2px dotted silver';
+}
 
 window.addEventListener('dragstart', (e)=>{
   e.preventDefault();
@@ -110,6 +114,7 @@ colorPalette = document.querySelector('.palette');
 
 for (let i = 0; i < 12; i++){
   let paletteCell = document.createElement('div');
+  paletteCell.classList.add('palette-color');
   colorPalette.appendChild(paletteCell);
 }
 
@@ -132,13 +137,19 @@ for (let i = 0; i < 12; i++){
   colorPalette.childNodes[i].style.backgroundColor = paletteRYB[i];
 }
 
-let lastCell = colorPalette.firstChild;
+let allPaletteColors = document.querySelectorAll('.palette-color');
+
 colorPalette.addEventListener('click', (e)=>{
-  lastCell.style.boxShadow = 'none';
-  lastCell = e.target;
-  if (e.target.className != 'palette'){
+  highlightTool(pencil);
+  currentTool = 'pencil';
+  allPaletteColors.forEach(element => {
+    element.style.boxShadow = 'none';
+  });
+  if (e.target.className != 'palette' && currentColor != e.target.style.backgroundColor){
   currentColor = e.target.style.backgroundColor;
   e.target.style.boxShadow = 'inset 0 0 3px 3px beige';
+  } else {
+    currentColor = 'rgb(102,102,102)';
   }
 });
 
