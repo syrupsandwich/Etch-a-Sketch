@@ -84,6 +84,8 @@ resolutionBtn.addEventListener('click', ()=>{
   clearCanvas();
   setResolution();
   setCanvas();
+  canvas.style.gap = '0';
+  gridStatus = 0;
 })
 
 function clearCanvas(){
