@@ -130,3 +130,12 @@ div.resolution {
   justify-content: center;
   flex: 1;
 }
+
+footer {
+  border: 1px solid maroon;
+  align-self: stretch;
+  position: sticky;
+  top: 100%;
+  text-align: center;
+  margin-top: 12px;
+}
